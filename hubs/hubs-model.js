@@ -14,7 +14,13 @@ module.exports = {
 };
 
 function find(query) {
-  const { page = 1, limit = 2, sortby = 'id', sortdir = 'asc' } = query;
+  //Changed limit so i can see more than 2 hubs in insomnia get request
+   //SET default values for query
+  // set page default to 1
+  // set to 100 by def
+  // sort by id
+  // sort direction ascending
+  const { page = 1, limit = 100, sortby = 'id', sortdir = 'asc' } = query;
   const offset = limit * (page - 1);
 
   let rows = db('hubs')
